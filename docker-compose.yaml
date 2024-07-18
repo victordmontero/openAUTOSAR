@@ -1,0 +1,8 @@
+version: "24.0.7"
+services:
+  autosar:
+    build: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/home/autosar
