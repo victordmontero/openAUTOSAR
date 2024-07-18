@@ -113,7 +113,7 @@ const uint32 IrqVector[] =
 typedef enum
 {
 	GPT_STATE_STOPPED = 0,
-			GPT_STATE_STARTED,
+	GPT_STATE_STARTED,
 } Gpt_StateType;
 
 /**

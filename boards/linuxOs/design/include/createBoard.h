@@ -1,6 +1,6 @@
 /********************************************************************
-* (C) DaVinci Engineering GmbH 2022
-********************************************************************/
+ * (C) DaVinci Engineering GmbH 2022
+ ********************************************************************/
 #ifndef CREATEBOARD_H_
 #define CREATEBOARD_H_
 
@@ -21,7 +21,7 @@ enum ledStatus
  */
 typedef struct _configFileData
 {
-    char * name;
+    char *name;
 } configFileData;
 
 /**
@@ -29,7 +29,7 @@ typedef struct _configFileData
  */
 typedef struct _board
 {
-    char * name;
+    char *name;
     int hsize;
     int vsize;
 } board;
@@ -39,10 +39,10 @@ typedef struct _board
  */
 typedef struct _button
 {
-    char * name;
+    char *name;
     int hsize;
     int vsize;
-    char * label;
+    char *label;
     enum buttonStatus btnStatus;
 } button;
 
@@ -51,12 +51,11 @@ typedef struct _button
  */
 typedef struct _led
 {
-    char * name;
+    char *name;
     int hsize;
     int vsize;
     enum ledStatus ledStatus;
 } led;
-
 
 /**
  * @brief Structure containing the whole definition of the board
@@ -74,7 +73,7 @@ typedef struct _boardDefinition
  * @param cfg pointer to the structure to be filled with data
  * @return 0 = success -1 = failure
  */
-int getBoardDescriptionFileName(char * fileName, configFileData * cfg);
+int getBoardDescriptionFileName(char *fileName, configFileData *cfg);
 
 /**
  * @brief Reads the the file name from the XML config file
@@ -88,7 +87,7 @@ void getFileNameFromDescriptionFile(xmlNode *a_node, configFileData *cfg);
  * @param cfg pointer to the structure filled with data
  * @return 0 = success -1 = failure
  */
-int getBoardDefinition(char * descriptionFileName, boardDefinition * bcfg);
+int getBoardDefinition(char *descriptionFileName, boardDefinition *bcfg);
 
 /**
  * @brief Reads the the components from the definition file
@@ -130,7 +129,5 @@ void renderBoard(boardDefinition *bcfg);
 WINDOW *create_newwin(int height, int width, int starty, int startx);
 WINDOW *create_newsubwin(WINDOW *parent, int height, int width, int starty, int startx);
 void destroy_win(WINDOW *local_win);
-
-
 
 #endif // CREATEBOARD_H_
